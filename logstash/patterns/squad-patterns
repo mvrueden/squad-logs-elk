@@ -1,0 +1,5 @@
+SQUAD_PLAYER %{DATA:player}
+SQUAD_LOG_DATE %{YEAR:year}.%{MONTHNUM:month}.%{MONTHDAY:day}-%{HOUR:hour}.%{MINUTE:minute}.%{SECOND:second}:%{NUMBER:millisecond}
+SQUAD_LOG_PREFIX \[%{SQUAD_LOG_DATE:date}\]\[%{DATA:unknown}\]%{WORD:context}:
+SQUAD_LOGSQUAD %{SQUAD_LOG_PREFIX} Player:%{SQUAD_PLAYER:receiver} ActualDamage=%{NUMBER:damage:float} from %{SQUAD_PLAYER:shooter} caused by %{WORD:weaponId}
+SQUAD_LOGSQUADTRACE %{SQUAD_LOG_PREFIX} \[%{WORD:source}\]%{WORD:className}::%{WORD:methodName}\(\): Player:%{SQUAD_PLAYER} KillingDamage=%{NUMBER:damage:float} from %{WORD:playerController} caused by %{WORD:weaponId}
